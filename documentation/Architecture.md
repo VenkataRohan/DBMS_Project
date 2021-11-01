@@ -39,7 +39,6 @@ Renders a page that contains the grade of each course of the semester selected.
 ### Tables
 
 **1.Student**: 
-
 Student_id  
 Password 
 Student_name  
@@ -50,7 +49,6 @@ Dob
 
  
 **2.Course**: 
-
 Course_id  
 Course_name  
 Branch_name  
@@ -59,7 +57,6 @@ Credits
 
 
 **3.Sem tables for each Sem (8 sems so 8 tables)**: 
-
 Sudent_id  
 Sem_no  
 Sub1_marks  

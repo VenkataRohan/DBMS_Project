@@ -42,20 +42,20 @@ Renders a page that contains the grade of each course of the semester selected.
 
 Student_id  
 Password 
-Student_name 
-Fathers_name 
-Branch  
-Yjoin 
-Dob 
+Student_name  
+Fathers_name  
+Branch   
+Yjoin  
+Dob  
 
  
 **2.Course**: 
 
-Course_id 
-Course_name 
-Branch_name 
-Sem_no 
-Credits 
+Course_id  
+Course_name  
+Branch_name  
+Sem_no  
+Credits  
 
 
 **3.Sem tables for each Sem (8 sems so 8 tables)**: 

@@ -1,5 +1,5 @@
 
-FRONT END DESIGN: 
+##FRONT END DESIGN: 
 
 Pages in front end: 
 
@@ -17,7 +17,7 @@ Complaints registered: This page allows the parents to lodge complaints if any.
 
 
 
-BACKEND DESIGN:
+##BACKEND DESIGN:
 
 These routes are created by using express.js 
 
@@ -42,3 +42,52 @@ Renders a page that contains the attendance  percentage of each course of the se
 /Grades(get) 
 
 Renders a page that contains the grade of each course of the semester selected. 
+
+
+##DATABASE DESIGN: 
+
+1.Student table: 
+
+Student_id  
+
+Password 
+
+Student_name 
+
+Fathers_name 
+
+Branch  
+
+Yjoin 
+
+Dob 
+
+ 
+
+2.Course: 
+
+Course_id 
+
+Course_name 
+
+Branch_name 
+
+Sem_no 
+
+Credits 
+
+ 
+
+3.Sem tables for each Sem (8 sems so 8 tables): 
+
+Sudent_id 
+
+Sem_no 
+
+Sub1_marks 
+
+Sub1_attend 
+
+Sub2_marks 
+
+Sub2_attend …. 

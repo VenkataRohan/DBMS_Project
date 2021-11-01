@@ -20,16 +20,16 @@
 
 These routes are created by using express.js 
 
-/Login(post)    
+**/Login(post)**    
 Requests the login id and password it checks whether the login credentials are correct from the database and renders the home page as a response. 
 
-/Home (get)     
+**/Home (get)**     
 Renders a page that contains navigation buttons like attandance,grades,signout. 
 
-/Attendance(get)    
+**/Attendance(get)**    
 Renders a page that contains the attendance  percentage of each course of the semester selected. 
 
-/Grades(get)    
+**/Grades(get)**    
 Renders a page that contains the grade of each course of the semester selected. 
 
 

@@ -1,7 +1,7 @@
 
 FRONT END DESIGN: 
 
-1.Pages: 
+Pages in front end: 
 
   Login: This page allows the user to get into the parent's portal by entering the valid roll no and password of each student. This also contains login access for staff. 
   

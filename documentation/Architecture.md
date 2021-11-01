@@ -38,7 +38,7 @@ Renders a page that contains the grade of each course of the semester selected.
 
 ### Tables
 
-- **1.Student**: 
+**1.Student**: 
 
 Student_id  
 Password 

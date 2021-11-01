@@ -16,7 +16,6 @@
 Complaints registered: This page allows the parents to lodge complaints if any. 
 
 
-
 ## BACKEND DESIGN:
 
 These routes are created by using express.js 
@@ -25,22 +24,13 @@ These routes are created by using express.js
 
 Requests the login id and password it checks whether the login credentials are correct from the database and renders the home page as a response. 
 
- 
-
 /Home (get) 
-
 Renders a page that contains navigation buttons like attandance,grades,signout. 
 
- 
-
 /Attendance(get) 
-
 Renders a page that contains the attendance  percentage of each course of the semester selected. 
 
- 
-
 /Grades(get) 
-
 Renders a page that contains the grade of each course of the semester selected. 
 
 
@@ -51,45 +41,33 @@ Renders a page that contains the grade of each course of the semester selected.
 - **1.Student**: 
 
 Student_id  
-
 Password 
-
 Student_name 
-
 Fathers_name 
-
 Branch  
-
 Yjoin 
-
 Dob 
 
  
-
 **2.Course**: 
 
 Course_id 
-
 Course_name 
-
 Branch_name 
-
 Sem_no 
-
 Credits 
 
- 
 
 **3.Sem tables for each Sem (8 sems so 8 tables)**: 
 
 Sudent_id 
-
 Sem_no 
-
 Sub1_marks 
-
 Sub1_attend 
-
 Sub2_marks 
-
 Sub2_attend …. 
+
+
+## Overview
+
+![overview](https://user-images.githubusercontent.com/89983494/139715216-e3979857-21e4-4dcd-a2f7-6c0fb456a035.jpg)

@@ -1,5 +1,5 @@
 
-##FRONT END DESIGN: 
+## FRONT END DESIGN: 
 
 Pages in front end: 
 
@@ -17,7 +17,7 @@ Complaints registered: This page allows the parents to lodge complaints if any.
 
 
 
-##BACKEND DESIGN:
+## BACKEND DESIGN:
 
 These routes are created by using express.js 
 
@@ -44,7 +44,7 @@ Renders a page that contains the attendance  percentage of each course of the se
 Renders a page that contains the grade of each course of the semester selected. 
 
 
-##DATABASE DESIGN: 
+## DATABASE DESIGN: 
 
 1.Student table: 
 

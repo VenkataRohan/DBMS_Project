@@ -60,12 +60,12 @@ Credits
 
 **3.Sem tables for each Sem (8 sems so 8 tables)**: 
 
-Sudent_id 
-Sem_no 
-Sub1_marks 
-Sub1_attend 
-Sub2_marks 
-Sub2_attend …. 
+Sudent_id  
+Sem_no  
+Sub1_marks  
+Sub1_attend  
+Sub2_marks   
+Sub2_attend ….    
 
 
 ## Overview

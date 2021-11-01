@@ -46,7 +46,9 @@ Renders a page that contains the grade of each course of the semester selected.
 
 ## DATABASE DESIGN: 
 
-1.Student table: 
+### Tables
+
+1. Student : 
 
 Student_id  
 
@@ -64,7 +66,7 @@ Dob
 
  
 
-2.Course: 
+2. Course: 
 
 Course_id 
 
@@ -78,7 +80,7 @@ Credits
 
  
 
-3.Sem tables for each Sem (8 sems so 8 tables): 
+3. Sem tables for each Sem (8 sems so 8 tables): 
 
 Sudent_id 
 

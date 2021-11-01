@@ -14,3 +14,31 @@ FRONT END DESIGN:
  List of holidays: This page displays all the holidays reserved for the current semester. 
 
 Complaints registered: This page allows the parents to lodge complaints if any. 
+
+
+
+BACKEND DESIGN:
+
+These routes are created by using express.js 
+
+/Login(post) 
+
+Requests the login id and password it checks whether the login credentials are correct from the database and renders the home page as a response. 
+
+ 
+
+/Home (get) 
+
+Renders a page that contains navigation buttons like attandance,grades,signout. 
+
+ 
+
+/Attendance(get) 
+
+Renders a page that contains the attendance  percentage of each course of the semester selected. 
+
+ 
+
+/Grades(get) 
+
+Renders a page that contains the grade of each course of the semester selected. 

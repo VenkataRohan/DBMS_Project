@@ -45,6 +45,7 @@ Fathers_name
 Branch   
 Yjoin  
 Dob  
+Email_id
 
  
 **2.Course**:   
@@ -56,12 +57,16 @@ Credits
 
 
 **3.Sem tables for each Sem (4  branches 4 tables)**:    
-course_name 
-Sem_no  
-Sub1_marks  
-Sub1_attend  
-Sub2_marks   
-Sub2_attend ….  
+Course_id
+Rollno1_grade
+Rollno1_Attendance
+Rollno2_grade
+Rollno2_Attendance
+Rollno3_grade
+Rollno3_Attendance
+.
+.
+.
 
 ## Overview
 

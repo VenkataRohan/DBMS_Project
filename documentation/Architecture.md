@@ -57,13 +57,13 @@ Credits
 
 
 **3.Sem tables for each Sem (4  branches 4 tables)**:    
-Course_id
-Rollno1_grade
-Rollno1_Attendance
-Rollno2_grade
-Rollno2_Attendance
-Rollno3_grade
-Rollno3_Attendance
+Course_id                                                                                                             
+Rollno1_grade                      
+Rollno1_Attendance                 
+Rollno2_grade                 
+Rollno2_Attendance                    
+Rollno3_grade              
+Rollno3_Attendance                    
 .
 .
 .

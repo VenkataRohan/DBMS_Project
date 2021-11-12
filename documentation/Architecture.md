@@ -56,13 +56,12 @@ Credits
 
 
 **3.Sem tables for each Sem (4  branches 4 tables)**:    
-Sudent_id  
+course_name 
 Sem_no  
 Sub1_marks  
 Sub1_attend  
 Sub2_marks   
-Sub2_attend ….    
-
+Sub2_attend ….  
 
 ## Overview
 

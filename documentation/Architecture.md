@@ -39,7 +39,7 @@ Renders a page that contains the grade of each course of the semester selected.
 
 **1.Student**:   
 Student_id  
-Password 
+Password                      
 Student_name  
 Fathers_name  
 Branch   

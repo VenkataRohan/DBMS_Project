@@ -32,6 +32,9 @@ Renders a page that contains the attendance  percentage of each course of the se
 **/Grades(get)**    
 Renders a page that contains the grade of each course of the semester selected. 
 
+**/forgot_password(get)**
+takes otp,new password and checks wheather the enter data is valid and renders marks.html 
+
 
 ## DATABASE DESIGN: 
 

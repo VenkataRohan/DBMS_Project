@@ -55,7 +55,7 @@ Sem_no
 Credits  
 
 
-**3.Sem tables for each Sem (8 sems so 8 tables)**:    
+**3.Sem tables for each Sem (4  branches 4 tables)**:    
 Sudent_id  
 Sem_no  
 Sub1_marks  

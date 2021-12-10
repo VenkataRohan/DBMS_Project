@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+      body{
+            background: dodgerblue linear-gradient(45deg, rgb(174, 0, 255), rgb(166, 16, 236), rgb(20, 255, 184)) fixed;
+        
+            /* background-color: rgba(88, 25, 170, 0.822); */
+        }
+    </style>
+</head>
+<body>
+    <div class="tbl">
+        <table class="table table-bordered table-hover">
+         
+          <thead class="table-dark">
+          <tr><td>S.no</td><td>Student ID </td> <td>complaints</td></tr>
+        </thead>
+          
+          
+              {{#each title}}
+              {{#with this}}
+                  {{#if completed}}
+                  <tr class="table-success"><td>{{no}}</td>  <td>{{student_id}}</td><td>{{complaint}}
+                  <button onclick="window.location.href='/staffcomplaints?action=remove&id={{no}}';" class="btn btn-danger btn-sm" name={{no}}>remove</button>
+                </td> </tr>
+                  {{else}}
+                  <tr class="table-danger"><td>{{no}}</td>  <td>{{student_id}}</td><td>{{complaint}}
+                <button onclick="window.location.href='/staffcomplaints?action=done&id={{no}}';" class="btn btn-primary btn-sm" name={{no}}>done</button>
+                  </td> </tr>
+                  {{/if}}
+
+               
+              {{/with}}
+              {{/each}}
+          
+        </table>
+      </div>
+</body>
+</html>

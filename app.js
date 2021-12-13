@@ -22,8 +22,13 @@ var mysql = require('mysql2');
     queueLimit: 0
   });
 
-  var id
+  var id,br,cgpa
+  const map1 = new Map();
 
+map1.set('CSE', 'cse');
+map1.set('EEE', 'eee');
+map1.set('ME', 'mech');
+map1.set('CE','civil');
 app.get('/',function(req,res){
   res.render(__dirname+'/templates/index.html');
 });
@@ -34,6 +39,7 @@ app.post('/',function(req,res){
               if(err) throw err
                 id=req.body.name
               console.log(result[0]);
+              br=result[0].Branch
               if(result.length!=0){
                 if(result[0].password==req.body.password)
                 res.render(__dirname+'/templates/details.html',{title:result[0]});
@@ -122,13 +128,20 @@ app.get('/marks',function(req,res){
 
   try{
     pool.getConnection(function(err, con) {
-    con.query(`select course.Course_name as course_name ,cse.100g as marks from cse inner join course on cse.Course_id=course.Course_id where course.Sem_no=${req.query.semister};`, function (err, result, fields) {
+      con.query(`select sum(course.Credits*${map1.get(br)}.${id}G)/sum(course.Credits) as cgpa from ${map1.get(br)} inner join course on ${map1.get(br)}.Course_id=course.Course_id  where course.Sem_no=${req.query.semister} and course.Branch='${br}';`, function (err, result, fields) {
+          cgpa=result[0].cgpa;
+          //console.log(cgpa);
+        });
+        pool.releaseConnection(con);
+     })
+    pool.getConnection(function(err, con) {
+    con.query(`select course.Course_name as course_name ,${map1.get(br)}.${id}G as marks  from ${map1.get(br)} inner join course on ${map1.get(br)}.Course_id=course.Course_id  where course.Sem_no=${req.query.semister} and course.Branch='${br}';`, function (err, result, fields) {
       if (err) throw err;
-     
+    // console.log(result);
       if (!err)
       {
       if(result)
-      return res.render(__dirname+'/templates/marks.html',{title:result});
+      return res.render(__dirname+'/templates/marks.html',{title:result,cgpa:cgpa});
       
       res.render(__dirname+'/templates/marks.html');
       }else{
@@ -155,7 +168,7 @@ app.get('/atd',function(req,res){
  
     try{
       pool.getConnection(function(err, con) {
-      con.query(`select course.Course_name as course_name ,cse.100a as attdance from cse inner join course on cse.Course_id=course.Course_id where course.Sem_no=${req.query.semister};`, function (err, result, fields) {
+      con.query(`select course.Course_name as course_name ,${map1.get(br)}.${id}A as marks  from ${map1.get(br)} inner join course on ${map1.get(br)}.Course_id=course.Course_id  where course.Sem_no=${req.query.semister} and course.Branch='${br}';`, function (err, result, fields) {
         if (err) throw err;
        
         if(result)
@@ -196,7 +209,7 @@ app.post('/addstudent',function(req,res){
     if (err) throw err;
     if (err){
       res.render(__dirname+'/templates/staff/addstd.html',{msg:"duplicate student id"})
-      console.log(err);
+     // console.log(err);
     }else{
       res.render(__dirname+'/templates/staff/home.html')
     }
@@ -221,7 +234,7 @@ app.post('/stafflogin',function(req,res){
   pool.getConnection(function(err, con) {
   con.query(`select * from staff where id=${req.body.name}`, function (err, result, fields) {
     if (err) throw err;
-    console.log(result[0]);
+   // console.log(result[0]);
     if(result.length!=0){
       if(result[0].password==req.body.password)
      return res.render(__dirname+'/templates/staff/home.html',);
@@ -242,7 +255,7 @@ app.get('/staff/update_marks',function(req,res){
   if(Object.keys(req.query)!=0){
     branch=req.query.branch
     pool.getConnection(function(err, con) {
-  con.query(`select Course_id from course where branch='${req.query.branch}' and sem_no=${req.query.semister} ;`, function (err, result, fields) {
+  con.query(`select Course_id,Course_name from course where branch='${req.query.branch}' and sem_no=${req.query.semister} ;`, function (err, result, fields) {
     if (err) throw err;
     if(result)
     //console.log(result);
@@ -259,12 +272,12 @@ app.get('/staff/update_marks',function(req,res){
 })
 
 app.get('/staff/update_attdance',function(req,res){
-  console.log(Object.keys(req.query));
+  //console.log(Object.keys(req.query));
    
    if(Object.keys(req.query)!=0){
      branch=req.query.branch
      pool.getConnection(function(err, con) {
-   con.query(`select Course_id from course where branch='${req.query.branch}' and sem_no=${req.query.semister} ;`, function (err, result, fields) {
+   con.query(`select Course_id,Course_name from course where branch='${req.query.branch}' and sem_no=${req.query.semister} ;`, function (err, result, fields) {
      if (err) throw err;
      if(result)
      //console.log(result);
@@ -282,7 +295,7 @@ app.get('/staff/update_attdance',function(req,res){
 
 var arr=[]
 app.post('/staff/update_marks',function(req,res){
-  console.log(req.body);
+  //console.log(req.body);
   var q=`update cse set ${req.body.id}g= case course_id`
   for(var pro in req.body){
    //console.log(pro);
@@ -295,13 +308,15 @@ app.post('/staff/update_marks',function(req,res){
   //console.log(q);
   pool.getConnection(function(err, con) {
   con.query(q, function (err, result, fields) {
-    if (err) throw err;
-    
-    
+    if (err) {
+      return res.render(__dirname+'/templates/staff/staffupdatemarks.html',{msg:'The given student Id does not exist in the selected Branch'});
+    }else{
+      return res.render(__dirname+'/templates/staff/staffupdatemarks.html');
+    }
     });
     pool.releaseConnection(con);
   })
-    return res.render(__dirname+'/templates/staff/staffupdateattdance.html');
+  
 })
 
 arr=[]
@@ -319,12 +334,15 @@ app.post('/staff/update_attdance',function(req,res){
   //console.log(q);
   pool.getConnection(function(err, con) {
   con.query(q, function (err, result, fields) {
-    if (err) throw err;
+    if (err) {
+      return res.render(__dirname+'/templates/staff/staffupdateattdance.html',{msg:'The given student Id does not exist in the selected Branch'});
+    }else{
+      return res.render(__dirname+'/templates/staff/staffupdateattdance.html');
+    }
     
     });
     pool.releaseConnection(con);
   })
-    return res.render(__dirname+'/templates/staff/staffupdatemarks.html');
 })
 
 

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+
+    body{
+            background: dodgerblue linear-gradient(45deg, rgb(174, 0, 255), rgb(166, 16, 236), rgb(20, 255, 184)) fixed;
+        
+            /* background-color: rgba(88, 25, 170, 0.822); */
+        }
+        .center{
+            position: absolute;
+            top: 50%;
+            left: 70%;
+            transform: translate(-50%,-50%);
+            width: 400px;
+            border-radius: 20px;
+            padding: 10px 20px 10px 20px;
+        }
+        .aaa{
+            position: absolute;
+            top: 50%;
+            left: 20%;
+            transform: translate(-50%,-50%);
+            width: 400px;
+            border-radius: 20px;
+            padding: 10px 20px 10px 20px;
+        }
+        p{
+          position: absolute;
+          left: 35%;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div id="demo" ></div>
+    <script>
+        var x ="", i;
+        for (i=1; i<=6; i++) {
+          x = x +  `   <h1> {{title.Fathers_name}}<h1>`;
+        }
+
+        document.getElementById("demo").innerHTML = `<h1>${x}</h1>`;
+        </script>
+    <script>{{title.id}}</script>    
+    <script>sdasdas</script> -->
+
+
+   
+    <form action="/" method="GET">
+        <input type="submit" value="Logout" />
+        </form>
+        <p class="h1 bg-primary ">Welcome To Parents Portal</p>
+        <!-- <ul class="list-group list-group-horizontal-sm">
+            <li class="list-group-item">Father name</li>
+            <li class="list-group-item">email</li>
+            <li class="list-group-item">Branch</li>
+          </ul>
+          
+        
+        <ul class="list-group list-group-horizontal">
+            <li class="list-group-item">{{title.Fathers_name}}</li>
+            <li class="list-group-item">{{title.email}}</li>
+            <li class="list-group-item">{{title.Branch}}</li>
+
+          </ul> -->
+          <div class="d-grid gap-3 col-6 mx-auto aaa">
+            
+            <h3>Student Name : <span class="label label-primary"> {{title.Student_name}} </span></h2>
+            <h3>Fathers Name : <span class="label label-info"> {{title.Fathers_name}} </span></h2>
+            <h3>Branch : <span class="label label-info"> {{title.Branch}} </span></h2>
+            <h3>Registered Email: <span class="label label-info"> {{title.email}} </span></h2>
+            </div>
+          
+          <div class="d-grid gap-4 col-6 mx-auto center">
+          <button onclick="window.location.href='/mks';" class="btn btn-secondary ">marks</button>
+            <button onclick="window.location.href='/atd';" class="btn btn-primary">attdance</button>
+            <button onclick="window.location.href='/holidays';" class="btn btn-secondary ">List of holidays</button>
+            <button onclick="window.location.href='/complaints';" class="btn btn-primary">complaints registered</button>
+          </div>
+            
+</body>
+</html>

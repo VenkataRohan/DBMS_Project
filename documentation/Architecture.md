@@ -74,3 +74,7 @@ Rollno3_Attendance
 ## Overview
 
 ![overview](https://user-images.githubusercontent.com/89983494/139715216-e3979857-21e4-4dcd-a2f7-6c0fb456a035.jpg)
+
+## E-R Diagram
+![E-R Diagram](https://user-images.githubusercontent.com/71220310/146066861-c58efdd3-5920-40ec-8144-37bb88c03a8d.jpeg)
+

@@ -28,9 +28,9 @@ id    password
 200	  mno
     
 Staff members can                           
-1.add a new students to the database            
-2.update grades and attendance of the students                
-3.keep track of complaints register by parents                          
+1. add a new students to the database            
+2. update grades and attendance of the students                
+3. keep track of complaints register by parents                          
 
 
 

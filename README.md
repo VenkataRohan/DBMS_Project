@@ -1,11 +1,11 @@
 # DBMS_Project
 It is a web application for parents portal of a college. In this application, we will display the grades and attendance of each student individually when they log in to the portal using their correct credentials. This portal also enables to lodge complaints/queries (if any).  One of the main features of this web application is the staff login.  Through staff login, one can enter marks, attendance manually and also check for complaints (if any).
 
-# Login Credintials
+Login Credintials
 id    password    name
-19501	abc	       Srujan Gundapaneni
-19502	aaa	       Venkata Rohan Kambambhati
-19503	bbb	       Goutham Reddy Velma
+19501	abc	       Srujan Gundapaneni                   
+19502	aaa	       Venkata Rohan Kambambhati             
+19503	bbb	       Goutham Reddy Velma             
 
 After logging in the page renders the details of the student and 4 buttons to navigate
 

@@ -7,12 +7,12 @@ id      password        name
 19502	aaa	       Venkata Rohan Kambambhati             
 19503	bbb	       Goutham Reddy Velma             
 
-After logging in the page renders the details of the student and 4 buttons to navigate
+After logging in, the page renders the details of the student and four buttons to navigate.
 
-In the marks page we should select the semester number and click on submit the grades of the corresponding semester and CGPA will be displayed.
-In the attendance page we should select the semester number and click on submit the attendance(In percentage) of the corresponding semester will be displayed.
-In the List of hollidays page the holidays of the current semester will be displayed.
-In the Complaints page we can register any  complaint or queries(if any).
+On the marks page, we should select the semester number and click on submit the grades of the corresponding semester, and CGPA will be displayed.
+On the attendance page, we should select the semester number and click on submit the attendance(In percentage) of the corresponding semester will be displayed.
+On the List of holidays page, holidays of the current semester will be displayed.
+On the Complaints page, we can register any complaints or queries.
 
 #### forgot password 
 It enables the user the create a new password

@@ -23,10 +23,10 @@ id    password
 100	  xyz	      
 200	  aaa
     
-staff members can 
-1.add a new students to the database
-2.Can update grades and attendance of the students
-3.Can also keep track of complaints register by parents  
+staff members can                           
+1.add a new students to the database            
+2.update grades and attendance of the students                
+3.keep track of complaints register by parents                          
 
 
 

@@ -14,8 +14,8 @@ In the attendance page we should select the semester number and click on submit 
 In the List of hollidays page the holidays of the current semester will be displayed.
 In the Complaints page we can register any  complaint or queries(if any).
 
-forgot password 
-enables the user the create a new password
+#### forgot password 
+It enables the user the create a new password
 
 ## staff login
 Login Credintials

@@ -49,6 +49,7 @@ Branch
 Yjoin  
 Dob  
 Email_id
+gender
 
  
 **2.Course**:   
@@ -59,7 +60,7 @@ Sem_no
 Credits  
 
 
-**3.Sem tables for each Sem (4  branches 4 tables)**:    
+**3.Branch tables for each branch (4  branches 4 tables)**:    
 Course_id                                                                                                             
 Rollno1_grade                      
 Rollno1_Attendance                 
@@ -70,6 +71,22 @@ Rollno3_Attendance
 .
 .
 .
+
+**4.List of holidays**:
+ id
+ date
+ holiday
+ 
+ **5.staff**:
+ id
+ password
+ 
+ **6.complaints**:
+ no
+ student id
+ complaint
+ completed
+ 
 
 ## Overview
 

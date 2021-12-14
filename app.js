@@ -38,7 +38,7 @@ app.post('/',function(req,res){
             con.query(`select * from student where student_id=${req.body.name}`, function (err, result, fields) {
               if(err) throw err
                 id=req.body.name
-              console.log(result[0]);
+             // console.log(result[0]);
               br=result[0].Branch
               if(result.length!=0){
                 if(result[0].password==req.body.password)
@@ -80,12 +80,11 @@ if(req.body.otp){
   pool.releaseConnection(con);
   })
   }
-  return res.render(__dirname+'/templates/marks.html');
+  return res.render(__dirname+'/templates/index.html');
 }else{
   otp=Math.floor(Math.random() * 8999) + 1000;
   id=req.body.name;
-    con.connect(function(err) {
-      if(err) throw err
+  pool.getConnection(function(err, con) {
       con.query(`select email from student where student_id=${req.body.name}`, function (err, result, fields) {
         if (err) throw err;
         
@@ -125,7 +124,7 @@ res.render(__dirname+'/templates/marks.html');
 })
 
 app.get('/marks',function(req,res){
-
+  if(Object.keys(req.query)!=0){
   try{
     pool.getConnection(function(err, con) {
       con.query(`select sum(course.Credits*${map1.get(br)}.${id}G)/sum(course.Credits) as cgpa from ${map1.get(br)} inner join course on ${map1.get(br)}.Course_id=course.Course_id  where course.Sem_no=${req.query.semister} and course.Branch='${br}';`, function (err, result, fields) {
@@ -155,6 +154,10 @@ app.get('/marks',function(req,res){
   } catch (error) {
     
   }
+}
+else{
+  res.render(__dirname+'/templates/marks.html',{msg:'Please select the semester'});
+}
 
 });
 
@@ -205,20 +208,20 @@ app.get('/addstudent',function(req,res){
 })
 app.post('/addstudent',function(req,res){
   pool.getConnection(function(err, con) {
-  con.query(`insert into student values(${req.body.student_id},'${req.body.password}','${req.body.studentname}','${req.body.fathername}','${req.body.branch}',${req.body.yjoin},'${req.body.dob}','${req.body.email}');`, function (err, result, fields) {
+  con.query(`insert into student values(${req.body.student_id},'${req.body.password}','${req.body.studentname}','${req.body.fathername}','${req.body.branch}',${req.body.yjoin},'${req.body.dob}','${req.body.email}','${req.body.gender}');`, function (err, result, fields) {
     if (err) throw err;
     if (err){
       res.render(__dirname+'/templates/staff/addstd.html',{msg:"duplicate student id"})
      // console.log(err);
     }else{
-      res.render(__dirname+'/templates/staff/home.html')
+      res.render(__dirname+'/templates/staff/addstd.html',{ms:'A new Student is added to database'})
     }
     
     });
     pool.releaseConnection(con);
   })
   pool.getConnection(function(err, con) {
-    con.query(`alter table ${req.body.branch} add(${req.body.student_id}a int default 0,${req.body.student_id}g int default 0);`, function (err, result, fields) {
+    con.query(`alter table ${map1.get(req.body.branch)} add(${req.body.student_id}A int,${req.body.student_id}G int);`, function (err, result, fields) {
     //  Alter Table Student ADD(Address Varchar(25), Phone INT, Email Varchar(20));
       if (err) throw err;
       
@@ -296,7 +299,8 @@ app.get('/staff/update_attdance',function(req,res){
 var arr=[]
 app.post('/staff/update_marks',function(req,res){
   //console.log(req.body);
-  var q=`update cse set ${req.body.id}g= case course_id`
+  arr=[]
+  var q=`update ${branch} set ${req.body.id}g= case course_id`
   for(var pro in req.body){
    //console.log(pro);
     if(req.body[pro]!='' && pro!='id'){
@@ -305,7 +309,7 @@ app.post('/staff/update_marks',function(req,res){
     }
   }
   q=q+`end where course_id in (${arr.toString()}) `
-  //console.log(q);
+  console.log(q);
   pool.getConnection(function(err, con) {
   con.query(q, function (err, result, fields) {
     if (err) {
@@ -322,6 +326,7 @@ app.post('/staff/update_marks',function(req,res){
 arr=[]
 app.post('/staff/update_attdance',function(req,res){
   //console.log(req.body);
+  arr=[]
   var q=`update cse set ${req.body.id}a= case course_id`
   for(var pro in req.body){
    //console.log(pro);

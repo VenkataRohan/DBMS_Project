@@ -17,11 +17,11 @@ In the Complaints page we can register any  complaint or queries(if any).
 #### forgot password 
 It enables the user the create a new password
 
-#### staff login
-Login Credintials
-id    password    
+#### staff login             
+Login Credintials             
+id    password                       
 100	  xyz	      
-200	  aaa
+200	  mno
     
 Staff members can                           
 1.add a new students to the database            

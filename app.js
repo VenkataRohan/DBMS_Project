@@ -39,8 +39,8 @@ app.post('/',function(req,res){
               if(err) throw err
                 id=req.body.name
              // console.log(result[0]);
-              br=result[0].Branch
               if(result.length!=0){
+                br=result[0].Branch
                 if(result[0].password==req.body.password)
                 res.render(__dirname+'/templates/details.html',{title:result[0]});
                 else

@@ -58,13 +58,15 @@
 </head>
 
 <body>
-    <h4 class="h4">Use These Credentials for Testing</h4>
-    <h4>Student Id: 19502 , Password: bbb </h4>
+   
     <h1 class="h1 h">Parents Portal</h1>
     <div class="inline">
     <form action="/" method="POST" class="center">
         {{msg}}
-       
+        <div class="form-floating mb-3 mt-3">
+            <input type="number" class="form-control"  placeholder="Enter id" name="name" value="19502" >
+            <label for="exampleid">Student ID</label>
+        </div>
         <div class="form-floating mb-3 mt-3">
             <input type="password" class="form-control"  placeholder="Enter password" name="password" value="bbb" required>
             <label for="exampleInputPassword1" class="form-label">Password</label>

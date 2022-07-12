@@ -33,18 +33,17 @@
     }</style>
 </head>
 <body>
-    <h4 class="h4">Use These Credentials for Testing</h4>
-    <h4>Id:100 , Password: xyz </h4>
+   
 
 
     <form action="/stafflogin" method="POST" class="center">
         {{msg}}
         <div class="form-floating mb-3 mt-3">
-            <input type="integer" class="form-control"  placeholder="Enter id" name="name" required>
+            <input type="integer" class="form-control"  placeholder="Enter id" name="name" value="100" required>
             <label for="exampleid">Staff ID</label>
         </div>
         <div class="form-floating mb-3 mt-3">
-            <input type="password" class="form-control"  placeholder="Enter password" name="password" required>
+            <input type="password" class="form-control"  placeholder="Enter password" name="password" value="xyz" required>
             <label for="exampleInputPassword1" class="form-label">Password</label>
         </div>
         <div class="pad">
